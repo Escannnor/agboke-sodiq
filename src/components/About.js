@@ -28,22 +28,56 @@ const About = () => {
     }
   ];
 
-  return (
-    <div className="about">
-      <h1>About Me</h1>
-      <div className="about-content">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="summary"
-        >
-          <p>{professionalSummary}</p>
-        </motion.div>
+  const education = [
+    {
+      degree: "B.Sc. Computer Science",
+      institution: "Tai-Solarin University, Ogun State",
+      year: "2020"
+    }
+  ];
 
+  const certifications = [
+    {
+      title: "Advanced Python Developer",
+      issuer: "Coursera",
+      year: "2024"
+    },
+    {
+      title: "Data Analysis with Python",
+      issuer: "Udemy",
+      year: "2023"
+    }
+  ];
+
+  return (
+    <section className="about" id="about">
+      <h2>About Me</h2>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="about-content"
+      >
+        <div className="about-text">
+          <p>{professionalSummary}</p>
+        </div>
+        <div className="about-stats">
+          {education.map((edu, index) => (
+            <div className="stat" key={index}>
+              <h3>{edu.degree}</h3>
+              <p>{edu.institution} ({edu.year})</p>
+            </div>
+          ))}
+          {certifications.map((cert, index) => (
+            <div className="stat" key={index}>
+              <h3>{cert.title}</h3>
+              <p>{cert.issuer} ({cert.year})</p>
+            </div>
+          ))}
+        </div>
         <motion.div
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
           className="highlights-grid"
         >
@@ -51,7 +85,7 @@ const About = () => {
             <motion.div
               key={index}
               initial={{ x: -50, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
+              animate={{ x: 0, opacity: 1 }}
               transition={{ delay: index * 0.2 }}
               className="highlight-card"
             >
@@ -63,8 +97,8 @@ const About = () => {
             </motion.div>
           ))}
         </motion.div>
-      </div>
-    </div>
+      </motion.div>
+    </section>
   );
 };
 

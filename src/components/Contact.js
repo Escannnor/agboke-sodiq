@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -22,14 +23,30 @@ const Contact = () => {
   };
 
   return (
-    <div className="contact">
-      <h1>Contact Me</h1>
+    <section className="contact" id="contact">
+      <h2>Contact Me</h2>
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
         className="contact-content"
       >
+        <div className="contact-info">
+          <h3>Get in Touch</h3>
+          <p>Let's discuss how I can help you with your next project!</p>
+          <div className="info-item">
+            <FaEnvelope />
+            <span>agboke.sodiq@example.com</span>
+          </div>
+          <div className="info-item">
+            <FaLinkedin />
+            <span><a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></span>
+          </div>
+          <div className="info-item">
+            <FaGithub />
+            <span><a href="https://github.com/your-profile" target="_blank" rel="noopener noreferrer">GitHub Profile</a></span>
+          </div>
+        </div>
         <form onSubmit={handleSubmit} className="contact-form">
           <div className="form-group">
             <label htmlFor="name">Name</label>
@@ -68,7 +85,7 @@ const Contact = () => {
           </button>
         </form>
       </motion.div>
-    </div>
+    </section>
   );
 };
 

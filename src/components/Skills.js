@@ -2,68 +2,57 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const Skills = () => {
-  const skillCategories = {
-    'Full Stack Development': [
-      'React', 'Node.js', 'Express', 'Django',
-      'Next.js', 'FastAPI', 'GraphQL', 'RESTful APIs'
-    ],
-    'Data Analysis & AI': [
-      'Python', 'R', 'SQL',
-      'TensorFlow', 'PyTorch', 'Pandas', 'NumPy',
-      'Data Visualization', 'Statistical Analysis', 'Machine Learning'
-    ],
-    'Backend Development': [
-      'Python', 'Rust', 'C', 'PHP',
-      'Django', 'FastAPI', 'Node.js', 'TypeScript'
-    ],
-    'Databases & Data Storage': [
-      'PostgreSQL', 'MongoDB', 'MySQL', 'Redis',
-      'Solana', 'Web3', 'Blockchain', 'Data Warehousing'
-    ],
-    'DevOps & Cloud': [
-      'Docker', 'Kubernetes', 'AWS', 'Azure',
-      'CI/CD', 'Terraform', 'Ansible', 'Serverless'
-    ],
-    'Data Engineering': [
-      'ETL', 'Data Pipelines', 'Apache Airflow',
-      'Apache Spark', 'Big Data', 'Data Streaming'
-    ]
-  };
+  const skills = [
+    {
+      category: "Programming Languages",
+      items: ["Python", "Rust", "C", "PHP"]
+    },
+    {
+      category: "Frameworks & Tools",
+      items: ["Django", "FastAPI", "Flask", "React"]
+    },
+    {
+      category: "Blockchain & Web3",
+      items: ["Solana", "Rust", "Smart Contracts", "Web3.js"]
+    },
+    {
+      category: "AI & Data Science",
+      items: ["TensorFlow", "OpenAI API", "pandas", "NumPy"]
+    },
+    {
+      category: "Databases",
+      items: ["MySQL", "SQLModel", "PostgreSQL"]
+    },
+    {
+      category: "Cloud & DevOps",
+      items: ["AWS", "Azure", "Docker", "CI/CD"]
+    }
+  ];
 
   return (
-    <div className="skills">
-      <h1>Technical Skills</h1>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        className="skills-grid"
-      >
-        {Object.entries(skillCategories).map(([category, skills], index) => (
+    <section className="skills" id="skills">
+      <h2>Technical Skills</h2>
+      <div className="skills-grid">
+        {skills.map((category, index) => (
           <motion.div
-            key={category}
-            initial={{ x: -50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ delay: index * 0.2 }}
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
             className="skill-category"
           >
-            <h3>{category}</h3>
-            <div className="skills-list">
-              {skills.map((skill, i) => (
-                <motion.span
-                  key={i}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="skill-tag"
-                >
+            <h3>{category.category}</h3>
+            <div className="skill-tags">
+              {category.items.map((skill, i) => (
+                <span key={i} className="skill-tag">
                   {skill}
-                </motion.span>
+                </span>
               ))}
             </div>
           </motion.div>
         ))}
-      </motion.div>
-    </div>
+      </div>
+    </section>
   );
 };
 

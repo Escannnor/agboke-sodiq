@@ -7,6 +7,7 @@ const professionalSummary = "Full Stack Software Engineer with over 5 years of e
 const Home = () => {
   return (
     <div className="home">
+      <div className="navbar-spacer"></div>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

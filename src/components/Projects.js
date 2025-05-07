@@ -1,98 +1,122 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FaCheck } from 'react-icons/fa';
+
+const projects = [
+  {
+    id: 1,
+    title: "AI Data Analyst Software",
+    description: "Built a real-time data visualization tool using Flask and pandas.",
+    technologies: ["Flask", "pandas", "Python"],
+    demoLink: "#",
+    image: "project1.jpg",
+    achievements: [
+      "Real-time data visualization with interactive charts",
+      "Automated data processing and analysis pipelines",
+      "Integration with multiple data sources"
+    ]
+  },
+  {
+    id: 2,
+    title: "Cryptocurrency Tracker",
+    description: "Developed a crypto price tracker with AI-powered insights.",
+    technologies: ["Python", "AI", "Blockchain"],
+    demoLink: "#",
+    image: "project2.jpg",
+    achievements: [
+      "Real-time price tracking for multiple cryptocurrencies",
+      "AI-powered market trend analysis",
+      "Customizable alerts and notifications"
+    ]
+  },
+  {
+    id: 3,
+    title: "Gemini AI Chatbot",
+    description: "Integrated Gemini AI for automated user interactions.",
+    technologies: ["AI", "Chatbot", "API Integration"],
+    demoLink: "#",
+    image: "project3.jpg",
+    achievements: [
+      "Natural language processing capabilities",
+      "Context-aware conversation handling",
+      "Multi-platform integration"
+    ]
+  },
+  {
+    id: 4,
+    title: "Solana Devnet Token",
+    description: "Created and deployed a Solana-based cryptocurrency using Rust.",
+    technologies: ["Solana", "Rust", "Smart Contracts", "Web3.js"],
+    demoLink: "#",
+    image: "project4.jpg",
+    achievements: [
+      "Smart contract development and deployment",
+      "Tokenomics design and implementation",
+      "Security audits and testing"
+    ]
+  },
+  {
+    id: 5,
+    title: "me4u.me",
+    description: "Engineered backend services with Laravel, Docker, and CI/CD.",
+    technologies: ["Laravel", "Docker", "CI/CD"],
+    demoLink: "#",
+    image: "project5.jpg",
+    achievements: [
+      "Microservices architecture implementation",
+      "Automated deployment pipelines",
+      "Scalable backend infrastructure"
+    ]
+  }
+];
 
 const Projects = () => {
-  const projects = [
-    {
-      title: "DataFlow Analytics Platform",
-      description: "Enterprise-grade data analysis and visualization platform. Built with React, Node.js, and PostgreSQL, featuring real-time data processing and advanced analytics capabilities.",
-      tech: ["React", "Node.js", "PostgreSQL", "D3.js", "Apache Airflow"],
-      link: "https://github.com/Escannnor/dataflow-analytics",
-      image: "https://raw.githubusercontent.com/Escannnor/Token-metrics-mini-app/main/src/assets/screenshot.png",
-      achievements: [
-        "Processed and analyzed over 100 million data points daily",
-        "Implemented real-time data streaming with Apache Kafka",
-        "Built custom data visualization dashboards",
-        "Integrated with multiple data sources including Solana blockchain"
-      ]
-    },
-    {
-      title: "SmartInsights AI Platform",
-      description: "Advanced AI-powered analytics platform for business intelligence. Uses machine learning to provide predictive insights and automated decision-making.",
-      tech: ["Python", "TensorFlow", "FastAPI", "Docker", "Kubernetes"],
-      link: "https://github.com/Escannnor/smartinsights",
-      image: "https://raw.githubusercontent.com/Escannnor/Token-metrics-mini-app/main/src/assets/screenshot.png",
-      achievements: [
-        "Achieved 95% accuracy in predictive analytics",
-        "Processed 1TB of data per day",
-        "Implemented automated ML model retraining",
-        "Built scalable microservices architecture"
-      ]
-    },
-    {
-      title: "Blockchain Data Analytics",
-      description: "Comprehensive blockchain analytics platform for Solana network. Provides real-time transaction analysis, smart contract monitoring, and market insights.",
-      tech: ["Solana", "Rust", "React", "TypeScript", "AWS"],
-      link: "https://github.com/Escannnor/blockchain-analytics",
-      image: "https://raw.githubusercontent.com/Escannnor/Token-metrics-mini-app/main/src/assets/screenshot.png",
-      achievements: [
-        "Processed 100,000+ transactions per second",
-        "Implemented real-time smart contract monitoring",
-        "Built comprehensive market analysis tools",
-        "Integrated with multiple blockchain networks"
-      ]
-    },
-    {
-      title: "AI-Powered E-commerce Platform",
-      description: "Next-generation e-commerce platform with AI-driven product recommendations and automated pricing optimization.",
-      tech: ["React", "Node.js", "MongoDB", "TensorFlow", "AWS"],
-      link: "https://github.com/Escannnor/ai-ecommerce",
-      image: "https://raw.githubusercontent.com/Escannnor/Token-metrics-mini-app/main/src/assets/screenshot.png",
-      achievements: [
-        "Increased conversion rates by 30%",
-        "Processed 1 million+ products",
-        "Implemented real-time price optimization",
-        "Built scalable microservices architecture"
-      ]
-    }
-  ];
-
   return (
-    <div className="projects">
-      <h1>Projects</h1>
+    <section className="projects" id="projects">
+      <h2>Projects</h2>
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
         className="projects-grid"
       >
-        {projects.map((project, index) => (
+        {projects.map((project) => (
           <motion.div
-            key={index}
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: index * 0.2 }}
+            key={project.id}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
             className="project-card"
           >
-            <h3>{project.title}</h3>
-            <p>{project.description}</p>
-            <div className="project-image">
-              {project.image && (
-                <img src={project.image} alt={project.title} />
-              )}
+            <div className="project-header">
+              <h3>{project.title}</h3>
+              <div className="tech-tags">
+                {project.technologies.map((tech, index) => (
+                  <span key={index} className="tech-tag">
+                    {tech}
+                  </span>
+                ))}
+              </div>
             </div>
-            <div className="tech-stack">
-              {project.tech.map((tech, i) => (
-                <span key={i} className="tech-tag">{tech}</span>
+            <p>{project.description}</p>
+            <div className="achievements">
+              {project.achievements.map((achievement, index) => (
+                <div key={index} className="achievement-item">
+                  <FaCheck className="achievement-icon" />
+                  <span>{achievement}</span>
+                </div>
               ))}
             </div>
-            <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
-              View Project
-            </a>
+            <div className="project-links">
+              <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className="view-project">
+                <span className="view-project-text">View Project</span>
+                <span className="view-project-icon">→</span>
+              </a>
+            </div>
           </motion.div>
         ))}
       </motion.div>
-    </div>
+    </section>
   );
 };
 
