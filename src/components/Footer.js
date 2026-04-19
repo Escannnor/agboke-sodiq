@@ -13,7 +13,14 @@ const Footer = () => {
           <div className="footer-info">
             <p>📍 Lagos, Nigeria</p>
             <p>📧 sawdickagboke@gmail.com</p>
-            <p>📞 09050192887</p>
+            <p>
+              📞{' '}
+              <a href="tel:+2349050192887">+234 905 019 2887</a>
+              {' · '}
+              <a href="tel:+2349063204448">+234 906 320 4448</a>
+              {' · '}
+              <a href="tel:+2348182852767">+234 818 285 2767</a>
+            </p>
           </div>
           <div className="footer-links">
             <p>© {new Date().getFullYear()} AGBOKE SODIQ. All rights reserved.</p>

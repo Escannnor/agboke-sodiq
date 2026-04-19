@@ -4,56 +4,68 @@ import { motion } from 'framer-motion';
 const Experience = () => {
   const experiences = [
     {
-      title: "Backend Developer",
-      company: "TechLink Solutions",
-      location: "Lagos, Nigeria",
-      period: "Mar 2021 – Jan 2022",
+      title: 'Software Engineer – Backend / Full Stack / AI Agents / Blockchain',
+      company: 'Age of AI (renamed Sumeru Tech)',
+      location: 'Remote (India & Dubai)',
+      period: 'Feb 2025 – Jan 2026',
       achievements: [
-        "Developed and optimized RESTful APIs using Django, reducing API response times by 25%",
-        "Designed and implemented secure authentication systems with OAuth2 and JWT",
-        "Improved database query efficiency, leading to better system performance"
+        'Built backend and full-stack solutions with Rust, Solidity, and Python.',
+        'Developed AI agents for automation and intelligent workflows.',
+        'Engineered blockchain apps and smart contracts with Solidity and Web3.',
+        'Delivered scalable, secure systems in remote global teams.',
       ],
-      tech: ["Django", "OAuth2", "JWT", "RESTful APIs"]
+      tech: ['Rust', 'Solidity', 'Python', 'Web3', 'AI agents'],
     },
     {
-      title: "Backend Developer / Data Analyst",
-      company: "Edgevarsity Nigeria",
-      location: "Lagos, Nigeria",
-      period: "Jan 2022 – Feb 2023",
+      title: 'Backend Developer Intern',
+      company: 'Digital Fortress ICT',
+      location: 'Lagos, Nigeria',
+      period: 'May 2023 – Aug 2024',
       achievements: [
-        "Automated data pipelines using Python (pandas, NumPy), reducing processing time by 30%",
-        "Built scalable backend services for real-time analytics and data visualization",
-        "Integrated third-party APIs for financial and business intelligence solutions"
+        'Designed microservices with FastAPI, boosting scalability.',
+        'Integrated AI tools for backend optimization and automation.',
       ],
-      tech: ["Python", "pandas", "NumPy", "API Integration"]
+      tech: ['FastAPI', 'Microservices', 'AI'],
     },
     {
-      title: "Backend Developer Intern",
-      company: "Digital Fortress ICT",
-      location: "Lagos, Nigeria",
-      period: "May 2023 – Aug 2024",
+      title: 'Backend Developer / Data Analyst',
+      company: 'Edgevarsity Nigeria',
+      location: 'Lagos, Nigeria',
+      period: 'Jan 2022 – Feb 2023',
       achievements: [
-        "Designed a microservices architecture with FastAPI, increasing system scalability",
-        "Integrated AI-powered tools for backend optimization and automation",
-        "Developed scripts for automating data workflows and improving efficiency"
+        'Automated pipelines with Python (pandas, NumPy), cutting processing time 30%.',
+        'Built scalable backend services for real-time analytics and visualization.',
+        'Integrated APIs for financial and business intelligence solutions.',
       ],
-      tech: ["FastAPI", "Microservices", "AI Automation"]
+      tech: ['Python', 'pandas', 'NumPy', 'APIs'],
     },
     {
-      title: "Systems Engineer",
-      company: "Lagos State Governor’s Office",
-      location: "Lagos, Nigeria",
-      period: "Current",
+      title: 'Backend Developer',
+      company: 'TechLink Solutions',
+      location: 'Lagos, Nigeria',
+      period: 'Mar 2021 – Jan 2022',
       achievements: [
-        "Led system upgrades, reducing downtime by 40%",
-        "Conducted security audits and implemented monitoring solutions"
+        'Optimized REST APIs with Django, reducing response times 25%.',
+        'Implemented secure authentication (OAuth2, JWT).',
       ],
-      tech: ["System Administration", "Security", "Monitoring"]
-    }
+      tech: ['Django', 'OAuth2', 'JWT', 'REST'],
+    },
+    {
+      title: 'Systems Engineer',
+      company: "Lagos State Governor's Office",
+      location: 'Lagos, Nigeria',
+      period: '',
+      achievements: [
+        'Led system upgrades, reducing downtime 40%.',
+        'Conducted security audits and monitoring solutions.',
+      ],
+      tech: ['Systems', 'Security', 'Monitoring'],
+    },
   ];
 
   return (
     <div className="experience">
+      <div className="navbar-spacer" />
       <h1>Experience</h1>
       <motion.div
         initial={{ opacity: 0 }}
@@ -63,7 +75,7 @@ const Experience = () => {
       >
         {experiences.map((exp, index) => (
           <motion.div
-            key={index}
+            key={exp.company + exp.title}
             initial={{ x: -50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: index * 0.2 }}
@@ -72,7 +84,7 @@ const Experience = () => {
             <h3>{exp.title}</h3>
             <p className="company">{exp.company}</p>
             <p className="location">{exp.location}</p>
-            <p className="period">{exp.period}</p>
+            {exp.period ? <p className="period">{exp.period}</p> : null}
             <ul className="achievements">
               {exp.achievements.map((achievement, i) => (
                 <li key={i}>{achievement}</li>

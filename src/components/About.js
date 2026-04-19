@@ -3,29 +3,33 @@ import { motion } from 'framer-motion';
 import { FaTrophy, FaCode, FaRobot, FaDatabase } from 'react-icons/fa';
 
 const About = () => {
-  const professionalSummary = "Full Stack Software Engineer with over 5 years of experience in building scalable, data-driven applications. Expert in full-stack development, data analysis, and AI integration. Proven track record of delivering high-impact solutions that drive business growth and innovation. Specialized in building maintainable, secure, and efficient systems that process and analyze large datasets.";
+  const professionalSummary = "Backend Developer & AI Engineer with 2.5 years of experience in scalable web applications, AI agents, and blockchain systems. Skilled in Python, Django, FastAPI, Rust, Solidity, and Web3. Proven success in remote international collaboration (India & Dubai) with expertise in API development, cloud infrastructure, and automation.";
 
   const keyHighlights = [
     {
       icon: <FaTrophy size={32} color="#1a73e8" />,
-      title: "Professional Experience",
-      content: "Over 5 years of hands-on experience in full-stack development, data analysis, and AI integration."
+      title: 'Professional Experience',
+      content:
+        '2.5 years across backend engineering, AI agents, and blockchain—including remote work with teams in India and Dubai.',
     },
     {
       icon: <FaCode size={32} color="#1a73e8" />,
-      title: "Technical Expertise",
-      content: "Expert in full-stack development with React, Node.js, and modern web technologies. Specialized in building scalable, secure, and maintainable systems."
+      title: 'Backend & APIs',
+      content:
+        'Python, Django, FastAPI, and Rust for scalable APIs, microservices, and secure authentication patterns.',
     },
     {
       icon: <FaRobot size={32} color="#1a73e8" />,
-      title: "Data Analysis & AI",
-      content: "Advanced experience with Python, R, TensorFlow, and building intelligent systems for real-time data processing and analysis."
+      title: 'AI & Automation',
+      content:
+        'AI agents, OpenAI integrations, and data workflows with TensorFlow, pandas, and NumPy.',
     },
     {
       icon: <FaDatabase size={32} color="#1a73e8" />,
-      title: "Data Engineering",
-      content: "Proven expertise in data warehousing, ETL processes, and building scalable data pipelines with Apache Airflow and Spark."
-    }
+      title: 'Data & Infrastructure',
+      content:
+        'MySQL, PostgreSQL, SQLModel, plus AWS, Azure, Docker, Kubernetes, and CI/CD for reliable delivery.',
+    },
   ];
 
   const education = [
@@ -51,6 +55,7 @@ const About = () => {
 
   return (
     <section className="about" id="about">
+      <div className="navbar-spacer" />
       <h2>About Me</h2>
       <motion.div
         initial={{ opacity: 0, y: 20 }}

@@ -9,27 +9,33 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <nav className="navbar">
       <div className="nav-content">
-        <Link to="/" className="logo">
+        <Link to="/" className="logo" onClick={closeMenu}>
           AGBOKE SODIQ
         </Link>
         <div className="mobile-menu-button" onClick={toggleMenu}>
           {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
         </div>
         <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-          <Link to="/about" onClick={toggleMenu}>About</Link>
-          <Link to="/experience" onClick={toggleMenu}>Experience</Link>
-          <Link to="/projects" onClick={toggleMenu}>Projects</Link>
-          <Link to="/skills" onClick={toggleMenu}>Skills</Link>
-          <Link to="/contact" onClick={toggleMenu}>Contact</Link>
+          <Link to="/" onClick={closeMenu}>Home</Link>
+          <Link to="/about" onClick={closeMenu}>About</Link>
+          <Link to="/experience" onClick={closeMenu}>Experience</Link>
+          <Link to="/projects" onClick={closeMenu}>Projects</Link>
+          <Link to="/skills" onClick={closeMenu}>Skills</Link>
+          <Link to="/resume" onClick={closeMenu}>Resume</Link>
+          <Link to="/contact" onClick={closeMenu}>Contact</Link>
         </div>
-        <div className="social-links">
-          <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
+        <div className="nav-social-links">
+          <a href="https://www.linkedin.com/in/sodiq-agboke-397117306/" target="_blank" rel="noopener noreferrer">
             <FaLinkedin size={24} />
           </a>
-          <a href="https://github.com/your-profile" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/Escannnor" target="_blank" rel="noopener noreferrer">
             <FaGithub size={24} />
           </a>
         </div>

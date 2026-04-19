@@ -4,38 +4,39 @@ import { motion } from 'framer-motion';
 const Skills = () => {
   const skills = [
     {
-      category: "Programming Languages",
-      items: ["Python", "Rust", "C", "PHP"]
+      category: 'Languages',
+      items: ['Python', 'Rust', 'Solidity', 'PHP', 'C'],
     },
     {
-      category: "Frameworks & Tools",
-      items: ["Django", "FastAPI", "Flask", "React"]
+      category: 'Frameworks',
+      items: ['Django', 'FastAPI', 'Flask', 'React'],
     },
     {
-      category: "Blockchain & Web3",
-      items: ["Solana", "Rust", "Smart Contracts", "Web3.js"]
+      category: 'Blockchain / Web3',
+      items: ['Solana', 'Smart Contracts', 'Web3.js'],
     },
     {
-      category: "AI & Data Science",
-      items: ["TensorFlow", "OpenAI API", "pandas", "NumPy"]
+      category: 'AI / Data',
+      items: ['TensorFlow', 'OpenAI API', 'pandas', 'NumPy'],
     },
     {
-      category: "Databases",
-      items: ["MySQL", "SQLModel", "PostgreSQL"]
+      category: 'Databases',
+      items: ['MySQL', 'PostgreSQL', 'SQLModel'],
     },
     {
-      category: "Cloud & DevOps",
-      items: ["AWS", "Azure", "Docker", "CI/CD"]
-    }
+      category: 'Cloud / DevOps',
+      items: ['AWS', 'Azure', 'Docker', 'Kubernetes', 'CI/CD'],
+    },
   ];
 
   return (
     <section className="skills" id="skills">
+      <div className="navbar-spacer" />
       <h2>Technical Skills</h2>
       <div className="skills-grid">
         {skills.map((category, index) => (
           <motion.div
-            key={index}
+            key={category.category}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}

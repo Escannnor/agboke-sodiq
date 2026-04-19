@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaEnvelope, FaLinkedin, FaGithub, FaPhone } from 'react-icons/fa';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -36,15 +36,23 @@ const Contact = () => {
           <p>Let's discuss how I can help you with your next project!</p>
           <div className="info-item">
             <FaEnvelope />
-            <span>agboke.sodiq@example.com</span>
+            <a href="mailto:sawdickagboke@gmail.com">sawdickagboke@gmail.com</a>
+          </div>
+          <div className="info-item info-item-phones">
+            <FaPhone />
+            <div className="phone-links">
+              <a href="tel:+2349050192887">+234 905 019 2887</a>
+              <a href="tel:+2349063204448">+234 906 320 4448</a>
+              <a href="tel:+2348182852767">+234 818 285 2767</a>
+            </div>
           </div>
           <div className="info-item">
             <FaLinkedin />
-            <span><a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></span>
+            <span><a href="https://www.linkedin.com/in/sodiq-agboke-397117306/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></span>
           </div>
           <div className="info-item">
             <FaGithub />
-            <span><a href="https://github.com/your-profile" target="_blank" rel="noopener noreferrer">GitHub Profile</a></span>
+            <span><a href="https://github.com/Escannnor" target="_blank" rel="noopener noreferrer">GitHub Profile</a></span>
           </div>
         </div>
         <form onSubmit={handleSubmit} className="contact-form">

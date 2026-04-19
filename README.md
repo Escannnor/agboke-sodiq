@@ -1,116 +1,102 @@
 # Personal Portfolio Website
 
-A modern, responsive personal portfolio website built with React, showcasing full-stack development and data analysis expertise.
+A responsive React portfolio for **Agboke Sodiq** (backend development, AI agents, and blockchain). Built with Create React App, React Router, Framer Motion, and global CSS.
+
+## Contact
+
+- **Email:** [sawdickagboke@gmail.com](mailto:sawdickagboke@gmail.com)
+- **Phone:** [+234 905 019 2887](tel:+2349050192887) · [+234 906 320 4448](tel:+2349063204448) · [+234 818 285 2767](tel:+2348182852767)
+- **LinkedIn:** [Sodiq Agboke](https://www.linkedin.com/in/sodiq-agboke-397117306/)
+- **GitHub:** [Escannnor](https://github.com/Escannnor)
 
 ## Features
 
-- 🎨 Theme Switching (Light/Dark mode)
-- 📱 Responsive Design
-- 📊 Interactive Project Showcase
-- 📧 Contact Form with Email Integration
-- 📈 Skills and Experience Display
-- 📱 Mobile-Friendly Navigation
+- Responsive layout and mobile navigation
+- Sections for home, about, experience, projects (with GitHub links), skills, resume upload (browser storage), and contact
+- Framer Motion for light page animations
+- React Icons
 
 ## Tech Stack
 
-- **Frontend**: React, React Router, Framer Motion
-- **Styling**: CSS Modules, Styled Components
-- **Animations**: Framer Motion
-- **Icons**: React Icons
-- **Email Integration**: EmailJS
+- **Frontend:** React 18, React Router 6, Framer Motion
+- **Styling:** Global CSS (`src/index.css`), with Emotion / MUI / styled-components available in dependencies if you extend the UI
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js (v14 or higher)
-- npm or yarn
+- Node.js 14+ (LTS recommended)
+- npm
 
 ### Installation
 
 1. Clone the repository:
+
 ```bash
-git clone https://github.com/your-username/personal-portfolio.git
+git clone https://github.com/<your-username>/<your-repo>.git
 ```
 
 2. Install dependencies:
+
 ```bash
-cd personal-portfolio
+cd agboke-sodiq
 npm install
 ```
 
-3. Configure EmailJS (for contact form):
-   - Sign up at [EmailJS](https://www.emailjs.com/)
-   - Create a new service and template
-   - Update the service ID, template ID, and public key in `src/components/ContactForm.js`
+3. Start the development server:
 
-4. Start the development server:
 ```bash
 npm start
 ```
 
-The website will be available at `http://localhost:3000`
+The app runs at [http://localhost:3000](http://localhost:3000).
 
-## Project Structure
+### Production build
 
-```
-src/
-├── components/         # Reusable React components
-├── context/           # React context providers
-├── assets/            # Static assets
-├── styles/            # Global styles and theme
-└── App.js             # Main application component
-```
-
-## Customization
-
-### Theme Customization
-
-Edit the CSS variables in `src/index.css` to modify the theme colors:
-```css
-:root {
-  --primary-color: #1a73e8;
-  --secondary-color: #2196f3;
-  --text-color: #333;
-  --light-text: #666;
-  --background: #fff;
-  --section-bg: #f8f9fa;
-  --border-color: #e0e0e0;
-}
-```
-
-### Content Customization
-
-1. Update personal information in `src/components/Home.js`
-2. Add or modify projects in `src/components/Projects.js`
-3. Update skills in `src/components/Skills.js`
-4. Modify the contact form in `src/components/ContactForm.js`
-
-## Deployment
-
-To deploy the website:
-
-1. Build the production version:
 ```bash
 npm run build
 ```
 
-2. Deploy to your preferred hosting service (e.g., Vercel, Netlify, GitHub Pages)
+Output is in the `build/` folder—suitable for **Vercel**, Netlify, or any static host.
 
-## Contributing
+## Project structure
 
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a new Pull Request
+```
+src/
+├── components/     # Pages and UI (Home, About, Experience, Projects, Skills, Resume, Contact, Navbar, Footer)
+├── context/        # Optional theme context (ThemeContext)
+├── App.js          # Routes
+├── index.js
+└── index.css       # Global styles and theme variables
+```
+
+## Customization
+
+### Theme
+
+Edit CSS variables in `src/index.css` (e.g. `--primary-color`, `--background`).
+
+### Content
+
+- **Summary & hero:** `src/components/Home.js`
+- **About & education:** `src/components/About.js`
+- **Work history:** `src/components/Experience.js`
+- **Projects & GitHub URLs:** `src/components/Projects.js`
+- **Skills:** `src/components/Skills.js`
+- **Resume (local upload):** `src/components/Resume.js`
+- **Contact form:** `src/components/Contact.js` (wire EmailJS or a backend as needed; see also `ContactForm.js` if you use that pattern)
+
+## Deployment (e.g. Vercel)
+
+1. Push this repo to GitHub.
+2. Import the project in Vercel; set the framework to **Create React App** (or use the default detection).
+3. Build command: `npm run build`, output directory: `build`.
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+MIT License—see the LICENSE file if present in the repository.
 
 ## Acknowledgments
 
-- React Icons for the icon library
-- Framer Motion for smooth animations
-- EmailJS for email integration
+- [React Icons](https://react-icons.github.io/react-icons/)
+- [Framer Motion](https://www.framer.com/motion/)

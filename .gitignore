@@ -9,6 +9,9 @@
 # Production
 /build
 
+# Vercel CLI
+.vercel
+
 # Misc
 .DS_Store
 .env.local

@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaLinkedin, FaGithub, FaLocationArrow, FaEnvelope, FaPhone } from 'react-icons/fa';
 
-const professionalSummary = "Full Stack Software Engineer with over 5 years of experience in building scalable, data-driven applications. Expert in full-stack development, data analysis, and AI integration. Proven track record of delivering high-impact solutions that drive business growth and innovation. Specialized in building maintainable, secure, and efficient systems that process and analyze large datasets.";
+const professionalSummary = "Backend Developer & AI Engineer with 2.5 years of experience in scalable web applications, AI agents, and blockchain systems. Skilled in Python, Django, FastAPI, Rust, Solidity, and Web3. Proven success in remote international collaboration (India & Dubai) with expertise in API development, cloud infrastructure, and automation.";
 
 const Home = () => {
   return (
@@ -15,7 +16,7 @@ const Home = () => {
         className="hero"
       >
         <h1>AGBOKE SODIQ</h1>
-        <h2>Senior Backend Developer | AI & Blockchain Specialist</h2>
+        <h2>Backend Developer & AI Engineer</h2>
         <p className="tagline">
           Building scalable systems and intelligent solutions that transform businesses
         </p>
@@ -31,18 +32,22 @@ const Home = () => {
           </div>
           <div className="info-item">
             <FaEnvelope className="info-icon" />
-            <span>sawdickagboke@gmail.com</span>
+            <a href="mailto:sawdickagboke@gmail.com">sawdickagboke@gmail.com</a>
           </div>
-          <div className="info-item">
+          <div className="info-item info-item-phones">
             <FaPhone className="info-icon" />
-            <span>09050192887</span>
+            <div className="phone-links">
+              <a href="tel:+2349050192887">+234 905 019 2887</a>
+              <a href="tel:+2349063204448">+234 906 320 4448</a>
+              <a href="tel:+2348182852767">+234 818 285 2767</a>
+            </div>
           </div>
         </div>
         <div className="social-links">
-          <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/sodiq-agboke-397117306/" target="_blank" rel="noopener noreferrer">
             <FaLinkedin size={24} />
           </a>
-          <a href="https://github.com/your-profile" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/Escannnor" target="_blank" rel="noopener noreferrer">
             <FaGithub size={24} />
           </a>
         </div>
@@ -52,12 +57,15 @@ const Home = () => {
           transition={{ delay: 0.5 }}
           className="cta-buttons"
         >
-          <a href="/about" className="cta-button primary">
+          <Link to="/about" className="cta-button primary">
             About Me
-          </a>
-          <a href="/projects" className="cta-button secondary">
+          </Link>
+          <Link to="/projects" className="cta-button secondary">
             My Work
-          </a>
+          </Link>
+          <Link to="/resume" className="cta-button secondary">
+            Upload Resume
+          </Link>
         </motion.div>
       </motion.div>
     </div>
