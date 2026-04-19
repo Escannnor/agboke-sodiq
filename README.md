@@ -86,11 +86,21 @@ Edit CSS variables in `src/index.css` (e.g. `--primary-color`, `--background`).
 - **Resume (local upload):** `src/components/Resume.js`
 - **Contact form:** `src/components/Contact.js` (wire EmailJS or a backend as needed; see also `ContactForm.js` if you use that pattern)
 
-## Deployment (e.g. Vercel)
+## Deployment (Vercel)
 
-1. Push this repo to GitHub.
-2. Import the project in Vercel; set the framework to **Create React App** (or use the default detection).
-3. Build command: `npm run build`, output directory: `build`.
+This repo includes [`vercel.json`](vercel.json) so React Router paths (for example `/about`) keep working after a refresh.
+
+**First time hosting**
+
+1. Open [vercel.com](https://vercel.com), sign in (e.g. with GitHub).
+2. **Add New… → Project** and import **`Escannnor/agboke-sodiq`** (or your fork).
+3. Leave defaults unless you use a monorepo: **Root Directory** = project root (`.`).
+4. Vercel should detect **Create React App**: **Build Command** `npm run build`, **Output Directory** `build`. Confirm before deploy.
+5. Click **Deploy**. After it finishes, you get a production URL (and preview URLs for branches/PRs).
+
+**Already connected to Vercel**
+
+Pushes to the production branch (usually `master` or `main`) trigger a new deployment automatically. The latest changes are already on GitHub: [Escannnor/agboke-sodiq](https://github.com/Escannnor/agboke-sodiq).
 
 ## License
 
